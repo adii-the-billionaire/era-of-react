@@ -1,0 +1,6 @@
+/myapp/node_modules
+/myapp/.eslintcache
+/myapp/.gitignore
+/myapp/package-lock.json
+/myapp/package.json
+/myapp/README.md
