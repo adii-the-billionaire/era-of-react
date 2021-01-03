@@ -39,7 +39,7 @@ class Counter extends Component {
             <div>
                 <span style={this.styles} className={this.getBadgeClasses()}>  {this.formatCount()}
                 </span>
-                <button onClick={this.doHandleIncrement} style={
+                <button onClick={()=>this.handleIncrement('product')} style={
                 { fontSize: 40 } }
             className = "btn btn-secondary btn-sm">
                     increment  </button> 
