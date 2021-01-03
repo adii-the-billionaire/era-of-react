@@ -23,12 +23,14 @@ class Counter extends Component {
         fontSize: 100,
         fontWeight: "bold",
     };
+    getBadgeClasses() {
+         let classes = "badge m-2 badge-"
+         return classes += (this.state.count===0)?"warning":"primary"
+    }
     render() {
-        let classes = "badge m-2 badge-"
-        classes += (this.state.count===0)?"warning":"primary"
         return (
             <div>
-                <span style={this.styles} className={classes}>  {this.formatCount()}
+                <span style={this.styles} className={this.getBadgeClasses()}>  {this.formatCount()}
                 </span>
                 <button style={
                 { fontSize: 200 } }
