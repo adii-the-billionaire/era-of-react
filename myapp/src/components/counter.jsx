@@ -8,6 +8,10 @@ class Counter extends Component {
             'ram','siya','lakshman','hanuman'
         ]
     };
+    handleIncrement = (product) => {
+        console.log(product)
+        this.setState({count:this.state.count+1})
+    }
     //here is how to rendering the tags element in the browser so let's start something doing here is the code baby 
     tag() {
         if ( this.state.tags.length === 0 ) {
@@ -20,20 +24,23 @@ class Counter extends Component {
             </h1>
     }
     styles = {
-        fontSize: 100,
+        fontSize: 40,
         fontWeight: "bold",
     };
     getBadgeClasses() {
          let classes = "badge m-2 badge-"
          return classes += (this.state.count===0)?"warning":"primary"
     }
+    doHandleIncrement = () => {
+        this.handleIncrement({id:1})
+    }
     render() {
         return (
             <div>
                 <span style={this.styles} className={this.getBadgeClasses()}>  {this.formatCount()}
                 </span>
-                <button style={
-                { fontSize: 200 } }
+                <button onClick={this.doHandleIncrement} style={
+                { fontSize: 40 } }
             className = "btn btn-secondary btn-sm">
                     increment  </button> 
                 {this.tag()}
