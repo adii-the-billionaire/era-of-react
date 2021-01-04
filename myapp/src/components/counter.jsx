@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 class Counter extends Component {
     state = {
-        count: 1,
+        count: 0,
         // imageUrl:'https://picsum.photos/200'
         tags: [
             'ram','siya','lakshman','hanuman'
@@ -43,7 +43,7 @@ class Counter extends Component {
                 { fontSize: 40 } }
             className = "btn btn-secondary btn-sm">
                     increment  </button> 
-                {this.tag()}
+                
                         </div>
         )
         
