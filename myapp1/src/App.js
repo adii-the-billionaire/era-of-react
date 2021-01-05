@@ -2,7 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import  Person from'./person'
 class App extends Component {
-  state = {  }
+   state = {
+        person: [
+            {name:'Mia',age:90},
+            {name:'Shasha',age:90},
+            {name:'Grey',age:90},
+        ]
+    }
+    
   render() { 
     return (
       <div className="App">
