@@ -4,7 +4,10 @@ class App extends Component {
   state = {  }
   render() { 
     return (
-      React.createElement( 'div', { className : "App" }, React.createElement('h1',null,'hi fella hw the hell are you'))
+      <div className="App">
+        <h1>Hi, I'm React App</h1>
+      </div>
+      // React.createElement( 'div', { className : "App" }, React.createElement('h1',null,'hi fella hw the hell are you'))
      );
   }
 }
