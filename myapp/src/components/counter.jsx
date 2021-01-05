@@ -2,27 +2,14 @@ import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 class Counter extends Component {
     state = {
-        count: 0,
-        // imageUrl:'https://picsum.photos/200'
-        tags: [
-            'ram','siya','lakshman','hanuman'
-        ]
+       value : this.props.value,
     };
-    handleIncrement = (product) => {
+    handleIncrement = product => {
         console.log(product)
-        this.setState({count:this.state.count+1})
+        this.setState({value:this.state.count+1})
     }
-    //here is how to rendering the tags element in the browser so let's start something doing here is the code baby 
-    tag() {
-        if ( this.state.tags.length === 0 ) {
-            return <h1>there are no tags</h1>
-        }
-        return <h1> here is our tag list :
-       <p><ul>{ this.state.tags.map( ( tag ) => {
-            return <li key={tag}>{tag}</li>
-       } )}</ul></p>
-            </h1>
-    }
+    
+    
     styles = {
         fontSize: 40,
         fontWeight: "bold",
@@ -31,15 +18,13 @@ class Counter extends Component {
          let classes = "badge m-2 badge-"
          return classes += (this.state.count===0)?"warning":"primary"
     }
-    doHandleIncrement = () => {
-        this.handleIncrement({id:1})
-    }
+  
     render() {
         return (
             <div>
                 <span style={this.styles} className={this.getBadgeClasses()}>  {this.formatCount()}
                 </span>
-                <button onClick={()=>this.handleIncrement('product')} style={
+                <button onClick={this.handleIncrement} style={
                 { fontSize: 40 } }
             className = "btn btn-secondary btn-sm">
                     increment  </button> 
