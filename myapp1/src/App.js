@@ -13,9 +13,9 @@ class App extends Component {
   render() { 
     return (
       <div className="App">
-        <Person name = "Max" age="89" />
-        <Person name ="Manu" age= "29" />
-        <Person name="mIa" age="24" >
+        <Person name ={this.state.person[0].name} age={this.state.person[0].age}/>
+        <Person name={this.state.person[1].name } age= {this.state.person[1].name} />
+        <Person name={this.state.person[ 2 ].name} age={ this.state.person[2].name}>
           My hobbies:Racing
         </Person>
         <Person name="si" age="90"/>
