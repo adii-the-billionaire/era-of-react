@@ -9,15 +9,28 @@ const list = [
        name:'siya'
     }
 ]
+
+
+let messageShown = false;
+
 const fun = ( list ) => {
     return list.forEach( ( list ) => {
-        const p = document.createElement( 'p' )
-        p.textContent = list.name
-        document.querySelector('body').appendChild(p)
+        const pit = document.createElement('p')
+        pit.textContent = list.name
+        document.querySelector('#Message').appendChild(pit)
     })
 }
-fun( list )
+ fun( list )
+//don't call in window so let's join something the value
 document.querySelector( "#hi" ).addEventListener( 'click', ( e ) => {
     e.preventDefault()
-    fun(list)
+    messageShown = !messageShown
+    if (messageShown === true) {
+    document.getElementById('Message').style.display = 'block';
+  } else {
+    document.getElementById('Message').style.display = 'none';
+  }
 })
+   
+
+//here i just want to toogle this value 
