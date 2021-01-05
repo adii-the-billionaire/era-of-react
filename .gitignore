@@ -1,4 +1,11 @@
-  /myapp/node_modules
+/myapp1/node_modules
+/myapp1/.eslintcache
+/myapp1/.gitignore
+/myapp1/package-lock.json
+/myapp1/package.json
+/myapp1/README.md
+/myapp/build
+/myapp/node_modules
 /myapp/.eslintcache
 /myapp/.gitignore
 /myapp/package-lock.json
