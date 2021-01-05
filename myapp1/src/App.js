@@ -6,7 +6,12 @@ class App extends Component {
   render() { 
     return (
       <div className="App">
-        <Person/>
+        <Person name = "Max" age="89" />
+        <Person name ="Manu" age= "29" />
+        <Person name="mIa" age="24" >
+          My hobbies:Racing
+        </Person>
+        <Person name="si" age="90"/>
         <h1>Hi, I'm React App</h1>
       </div>
       // React.createElement( 'div', { className : "App" }, React.createElement('h1',null,'hi fella hw the hell are you'))
