@@ -5,11 +5,13 @@ import Person from './person';
 class App extends Component {
   state = {
     person: [
-      { name: 'Mia', age: 90 },
-      { name: 'Shasha', age: 90 },
-      { name: 'Grey', age: 90 }
+      { id:'djdjdj', name: 'Mia', age: 90 },
+      {
+        id:'dkdkdk', name: 'Shasha', age: 90
+      },
+      {id:'djdjdjd', name: 'Grey', age: 90 }
     ],
-    otherState: 'some other value',
+    otherState: '',
     showPersons: false
   }
   switchHandler = ( event ) => {
@@ -18,17 +20,21 @@ class App extends Component {
         { name: event, age: 90 },
         { name: 'sia', age: 90 },
         { name: 'tia', age: 90 }
-      ]
+      ],
+      
     } )
   }
-  nameChangeHandler = ( event ) => {
+  nameChangeHandler = ( event,id ) => {
+    const personIndex = this.state.person.findIndex( p => p.id === id )
+    const personNew = { ...this.state.person[ personIndex ] }
+    //we can also using of Object.assign
+    //Object.assign({},this.state.person[personIndex])
+    personNew.name = event.target.value
+    const person2 = [ ...this.state.person ]
+    person2[personIndex] = personNew
     this.setState( {
-      person: [
-        {id:'ajsj', name: 'mia', age: 90 },
-        { id:'vajdj',name: 'sia', age: 90 },
-        { id:'djdjd',name: event.target.value, age: 90 }
-      ]
-    } )
+      person:person2
+    })
   }
   togglePersonHandler = () => {
     const doesShow = this.state.showPersons
@@ -40,6 +46,7 @@ class App extends Component {
     persons.splice( personIndex, 1 )
     this.setState({person:persons})
   }
+ 
   render() {
     const style = {
       backgroundColor: 'white',
@@ -53,14 +60,13 @@ class App extends Component {
       person = (
         <div>
           {this.state.person.map( (person,index )=> {
-            return <Person click={() => { this.deletePersonHandler( index ) }} name={person.name} age={person.age} key={ person.id}/>
+            return <Person click={() => { this.deletePersonHandler( index ) }} name={person.name} age={person.age} key={ person.id} changed = {(event)=>{this.nameChangeHandler(event,person.id)} } clikc1 = {this.state.otherState} />
          })}
         </div>
       )
     }
     return (
       <div className="App">
-        <button style={style} onClick={() => { this.switchHandler( 'mahiyaaaa' ) }}>clickmeBaby</button>
         <button style={style} onClick={this.togglePersonHandler}
         > hide me</button>
         {person}
