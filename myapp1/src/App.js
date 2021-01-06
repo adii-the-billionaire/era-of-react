@@ -35,7 +35,8 @@ class App extends Component {
     this.setState( { showPersons: !doesShow } )
   }
   deletePersonHandler = ( personIndex ) => {
-    const persons = this.state.person
+    // const persons = this.state.person.slice()
+    const persons = [...this.state.person]
     persons.splice( personIndex, 1 )
     this.setState({person:persons})
   }
@@ -64,26 +65,10 @@ class App extends Component {
         > hide me</button>
         {person}
       </div>
-      // {
-      //         this.state.showPersons === true ?
-      //           <div>
-      //       <Person name ={this.state.person[0].name} age={this.state.person[0].age}/>
-      //       <Person name={this.state.person[1].name} age= {this.state.person[1].age} />
-      //       <Person name={this.state.person[2].name} age={ this.state.person[2].age} click={this.switchHandler} changed = {this.nameChangeHandler}>
-      //         My hobbies:Racing
-      //       </Person>
-      //       <Person name="si" age="90"/>
-      //           </div> :null
-      //       }
-
-      //       <h1>Hi, I'm React App</h1>
-      //     </div>
-      //     // React.createElement( 'div', { className : "App" }, React.createElement('h1',null,'hi fella hw the hell are you'))
-      //    );
-      // }
     )
   }
 }
 //this is javascript at the end this compiled to this code
+//in the javascript object and the arrays are the reference type so this must to be considered
 export default App ;
 
