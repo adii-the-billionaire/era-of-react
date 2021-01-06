@@ -30,5 +30,4 @@ const person = ( props ) => {
         )
 }
 export default person
-// export default Radium(person)
-//Radium class component and functional component so let's start something arbitrary
+

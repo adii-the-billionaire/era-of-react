@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import styled from 'styled-components'
+// import styled from 'styled-components'
 // import Radium, { StyleRoot}from 'radium'
 import Person from './person';
 
-const StyledButton = styled.button`
- background-color: ${props =>props.alt?'red':'blue'};
-      color:white;
-      font: inherit;
-      border: 1px solid blue;
-      padding: 8px;
-      cursor: pointer;
-      &:hover {
-        background-color: ${props=>props.alt?'salmon':'pink'};
-        color:black;
-      }`
+// const StyledButton = styled.button`
+//  background-color: ${props =>props.alt?'red':'blue'};
+//       color:white;
+//       font: inherit;
+//       border: 1px solid blue;
+//       padding: 8px;
+//       cursor: pointer;
+//       &:hover {
+//         background-color: ${props=>props.alt?'salmon':'pink'};
+//         color:black;
+//       }`
 class App extends Component {
   state = {
     person: [
@@ -101,20 +101,12 @@ class App extends Component {
       <div className="App">
         <h1>Hi'm React</h1>
         <p className = {classes.join(' ')}>this is really working</p>
-        <StyledButton alt ={this.state.showPersons} onClick={this.togglePersonHandler}
-        > hide me</StyledButton>
+        <button alt ={this.state.showPersons} onClick={this.togglePersonHandler}
+        > hide me</button>
         {person}
         </div>
     )
   }
 }
-//this is javascript at the end this compiled to this code
-//in the javascript object and the arrays are the reference type so this must to be considered
-//when rendering a list of data describe default property that is key property so think about this
-//we can'nt use the pseudo selector
-//dealing the problems with pseudo selector
-//anything is dynamically 
-//className dynamically so here is think that 
-//all pseudo selector must wrap in the quotation form so understand this logic 
  export default App ;
 // export default Radium(App)
