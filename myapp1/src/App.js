@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Radium, { StyleRoot}from 'radium'
+// import Radium, { StyleRoot}from 'radium'
 import Person from './person';
 
 class App extends Component {
@@ -88,7 +88,7 @@ class App extends Component {
     }
     
     return (
-      <StyleRoot>
+      // <StyleRoot>
       <div className="App">
         <h1>Hi'm React</h1>
         <p className = {classes.join(' ')}>this is really working</p>
@@ -96,7 +96,7 @@ class App extends Component {
         > hide me</button>
         {person}
         </div>
-        </StyleRoot>
+        // </StyleRoot>
     )
   }
 }
@@ -108,5 +108,5 @@ class App extends Component {
 //anything is dynamically 
 //className dynamically so here is think that 
 //all pseudo selector must wrap in the quotation form so understand this logic 
-// export default App ;
-export default Radium(App)
+ export default App ;
+// export default Radium(App)
