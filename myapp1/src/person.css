@@ -6,3 +6,15 @@
     padding: 16px;
     text-align: center;
 }
+
+
+/* @media(min-width:500px) {
+    .Perosn {
+        width: 60%;
+        margin: auto;
+        border: 1px solid rgb(46, 23, 23);
+        box-shadow: 0 2px 3px #ccc;
+        padding: 16px;
+        text-align: center;
+    }
+} */
