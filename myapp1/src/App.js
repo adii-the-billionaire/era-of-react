@@ -33,7 +33,10 @@ class App extends Component {
     const person2 = [ ...this.state.person ]
     person2[personIndex] = personNew
     this.setState( {
-      person:person2
+      person: person2
+      
+
+
     })
   }
   togglePersonHandler = () => {
@@ -49,7 +52,8 @@ class App extends Component {
  
   render() {
     const style = {
-      backgroundColor: 'white',
+      backgroundColor: 'green',
+      color:'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
@@ -64,9 +68,20 @@ class App extends Component {
          })}
         </div>
       )
+      style.backgroundColor = 'yellow'
     }
+    const classes = []
+    if ( this.state.person.length <= 2 ) {
+      classes.push('red')
+    }
+    if ( this.state.person.length <= 1 ) {
+      classes.push('bold')
+    }
+    
     return (
       <div className="App">
+        <h1>Hi'm React</h1>
+        <p className = {classes.join(' ')}>this is really working</p>
         <button style={style} onClick={this.togglePersonHandler}
         > hide me</button>
         {person}
@@ -77,5 +92,10 @@ class App extends Component {
 //this is javascript at the end this compiled to this code
 //in the javascript object and the arrays are the reference type so this must to be considered
 //when rendering a list of data describe default property that is key property so think about this
+//we can'nt use the pseudo selector
+//dealing the problems with pseudo selector
+//anything is dynamically 
+//className dynamically so here is think that 
+//
 export default App ;
 
