@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Radium from 'radium'
 import Person from './person';
 
 class App extends Component {
@@ -57,7 +58,11 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      ':hover': {
+        backgroundColor: 'lightgreen',
+        color:'black'
+      }
     }
     let person = null
     if ( this.state.showPersons ) {
@@ -69,6 +74,10 @@ class App extends Component {
         </div>
       )
       style.backgroundColor = 'yellow'
+      style[ ':hover' ] = {
+        backgroundColor: 'blue',
+        color:'black'
+      }
     }
     const classes = []
     if ( this.state.person.length <= 2 ) {
@@ -96,6 +105,6 @@ class App extends Component {
 //dealing the problems with pseudo selector
 //anything is dynamically 
 //className dynamically so here is think that 
-//
-export default App ;
-
+//all pseudo selector must wrap in the quotation form so understand this logic 
+// export default App ;
+export default Radium(App)

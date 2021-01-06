@@ -1,5 +1,6 @@
 import React from 'react';
 import './person.css'
+import Radium from 'radium'
 const person = ( props ) => {
     return (
         <div className = "Person">
@@ -10,4 +11,5 @@ const person = ( props ) => {
         </div>
         )
 }
-export default person
+export default Radium(person)
+//Radium class component and functional component so let's start something arbitrary
