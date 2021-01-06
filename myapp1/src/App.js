@@ -24,9 +24,9 @@ class App extends Component {
   nameChangeHandler = ( event ) => {
     this.setState( {
       person: [
-        { name: 'mia', age: 90 },
-        { name: 'sia', age: 90 },
-        { name: event.target.value, age: 90 }
+        {id:'ajsj', name: 'mia', age: 90 },
+        { id:'vajdj',name: 'sia', age: 90 },
+        { id:'djdjd',name: event.target.value, age: 90 }
       ]
     } )
   }
@@ -53,7 +53,7 @@ class App extends Component {
       person = (
         <div>
           {this.state.person.map( (person,index )=> {
-            return <Person click = {()=>{this.deletePersonHandler(index)}} name={ person.name} age={person.age }/>
+            return <Person click={() => { this.deletePersonHandler( index ) }} name={person.name} age={person.age} key={ person.id}/>
          })}
         </div>
       )
@@ -70,5 +70,6 @@ class App extends Component {
 }
 //this is javascript at the end this compiled to this code
 //in the javascript object and the arrays are the reference type so this must to be considered
+//when rendering a list of data describe default property that is key property so think about this
 export default App ;
 
