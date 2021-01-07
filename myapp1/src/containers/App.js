@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classes from'./App.module.css';
 // import styled from 'styled-components'
 // import Radium, { StyleRoot}from 'radium'
-import Person from './person';
+import Person from '../components/Persons/Person/person';
 
 // const StyledButton = styled.button`
 //  background-color: ${props =>props.alt?'red':'blue'};
@@ -110,5 +110,5 @@ class App extends Component {
     )
   }
 }
- export default App ;
-// export default Radium(App)
+export default App ;
+//export default Radium(App)
