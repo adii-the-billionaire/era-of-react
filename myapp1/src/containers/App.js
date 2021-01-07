@@ -3,18 +3,8 @@ import classes from'./App.module.css';
 // import styled from 'styled-components'
 // import Radium, { StyleRoot}from 'radium'
 import Person from '../components/Persons/Person/person';
-
-// const StyledButton = styled.button`
-//  background-color: ${props =>props.alt?'red':'blue'};
-//       color:white;
-//       font: inherit;
-//       border: 1px solid blue;
-//       padding: 8px;
-//       cursor: pointer;
-//       &:hover {
-//         background-color: ${props=>props.alt?'salmon':'pink'};
-//         color:black;
-//       }`
+import Persons from '../components/Persons/Persons'
+      
 class App extends Component {
   state = {
     person: [
@@ -61,34 +51,17 @@ class App extends Component {
   }
  
   render() {
-    // const style = {
-    //   backgroundColor: 'green',
-    //   color:'white',
-    //   font: 'inherit',
-    //   border: '1px solid blue',
-    //   padding: '8px',
-    //   cursor: 'pointer',
-    //   ':hover': {
-    //     backgroundColor: 'lightgreen',
-    //     color:'black'
-    //   }
-    // }
     let person = null
     let btnClass = [classes.Button]
     if ( this.state.showPersons ) {
       person = (
         <div>
-          {this.state.person.map( (person,index )=> {
-            return <Person click={() => { this.deletePersonHandler( index ) }} name={person.name} age={person.age} key={ person.id} changed = {(event)=>{this.nameChangeHandler(event,person.id)} } clikc1 = {this.state.otherState} />
-         })}
+          <Persons persons={this.state.person}
+            clicked={this.deletePersonHandler }
+            changed={ this.nameChangeHandler}/>
         </div>
       )
       btnClass.push(classes.Red)
-      // style.backgroundColor = 'yellow'
-      // style[ ':hover' ] = {
-      //   backgroundColor: 'blue',
-      //   color:'black'
-      // }
     }
     const assignedClassed = []
     if ( this.state.person.length <= 2 ) {
@@ -99,7 +72,6 @@ class App extends Component {
     }
     
     return (
-      // <StyleRoot>
       <div className={classes.App}>
         <h1>Hi'm React</h1>
         <p className = {assignedClassed.join(' ')}>this is really working</p>
