@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import classes from'./App.module.css';
 // import styled from 'styled-components'
 // import Radium, { StyleRoot}from 'radium'
 import Person from './person';
@@ -74,6 +74,7 @@ class App extends Component {
     //   }
     // }
     let person = null
+    let btnClass = [classes.Button]
     if ( this.state.showPersons ) {
       person = (
         <div>
@@ -82,26 +83,27 @@ class App extends Component {
          })}
         </div>
       )
+      btnClass.push(classes.Red)
       // style.backgroundColor = 'yellow'
       // style[ ':hover' ] = {
       //   backgroundColor: 'blue',
       //   color:'black'
       // }
     }
-    const classes = []
+    const assignedClassed = []
     if ( this.state.person.length <= 2 ) {
-      classes.push('red')
+      assignedClassed.push(classes.red)
     }
     if ( this.state.person.length <= 1 ) {
-      classes.push('bold')
+      assignedClassed.push(classes.bold)
     }
     
     return (
       // <StyleRoot>
-      <div className="App">
+      <div className={classes.App}>
         <h1>Hi'm React</h1>
-        <p className = {classes.join(' ')}>this is really working</p>
-        <button alt ={this.state.showPersons} onClick={this.togglePersonHandler}
+        <p className = {assignedClassed.join(' ')}>this is really working</p>
+        <button className = {btnClass.join(' ')} onClick={this.togglePersonHandler}
         > hide me</button>
         {person}
         </div>

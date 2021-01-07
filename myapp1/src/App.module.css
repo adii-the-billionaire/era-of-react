@@ -10,7 +10,7 @@
     font-weight: bold;
 }
 
-button {
+.Button {
     background-color: rgb(95, 95, 89);
     color: white;
     font: inherit;
@@ -19,7 +19,15 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.Button:hover {
     background-color: darkgoldenrod;
     color: black;
+}
+
+.Button.Red {
+    background-color: rgb(18, 83, 139);
+}
+
+.Button.Red:hover {
+    background-color: rgb(109, 97, 81);
 }
