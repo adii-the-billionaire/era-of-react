@@ -7,8 +7,13 @@ import Person from '../components/Persons/Person/person';
 import Persons from '../components/Persons/Persons'
       
 class App extends Component {
-  state = {
-    person: [
+  constructor ( props ) {
+    super( props )
+    console.log(
+      'app.js constructor'
+    )
+    this.state = {
+       person: [
       { id:'djdjdj', name: 'Mia', age: 90 },
       {
         id:'dkdkdk', name: 'Shasha', age: 90
@@ -17,7 +22,19 @@ class App extends Component {
     ],
     otherState: '',
     showPersons: false
+    }
   }
+  // state = {
+  //   person: [
+  //     { id:'djdjdj', name: 'Mia', age: 90 },
+  //     {
+  //       id:'dkdkdk', name: 'Shasha', age: 90
+  //     },
+  //     {id:'djdjdjd', name: 'Grey', age: 90 }
+  //   ],
+  //   otherState: '',
+  //   showPersons: false
+  // }
   switchHandler = ( event ) => {
     this.setState( {
       person: [
