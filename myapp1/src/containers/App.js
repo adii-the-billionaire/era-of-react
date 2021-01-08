@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import classes from'./App.module.css';
+import classes from './App.module.css';
+import Cockpit from '../components/Cockpit/Cockpit'
 // import styled from 'styled-components'
 // import Radium, { StyleRoot}from 'radium'
 import Person from '../components/Persons/Person/person';
@@ -52,7 +53,6 @@ class App extends Component {
  
   render() {
     let person = null
-    let btnClass = [classes.Button]
     if ( this.state.showPersons ) {
       person = (
         <div>
@@ -61,22 +61,10 @@ class App extends Component {
             changed={ this.nameChangeHandler}/>
         </div>
       )
-      btnClass.push(classes.Red)
     }
-    const assignedClassed = []
-    if ( this.state.person.length <= 2 ) {
-      assignedClassed.push(classes.red)
-    }
-    if ( this.state.person.length <= 1 ) {
-      assignedClassed.push(classes.bold)
-    }
-    
     return (
       <div className={classes.App}>
-        <h1>Hi'm React</h1>
-        <p className = {assignedClassed.join(' ')}>this is really working</p>
-        <button className = {btnClass.join(' ')} onClick={this.togglePersonHandler}
-        > hide me</button>
+        <Cockpit showPersons={this.state.showPersons} persons={this.state.person} tipa={ this.togglePersonHandler}/>
         {person}
         </div>
     )
