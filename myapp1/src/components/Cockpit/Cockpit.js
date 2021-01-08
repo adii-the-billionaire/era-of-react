@@ -13,8 +13,8 @@ const cockpit = ( props ) => {
       assignedClassed.push(classes.bold)
     }
     return (<div className = {classes.Cockpit}>
-         <h1>Hi'm React</h1>
-        <p className = {assignedClassed.join(' ')}>this is really working</p>
+      <h1>{props.title }</h1>
+        <p className =  {assignedClassed.join(' ')}>this is really working</p>
         <button className={btnClass} onClick = {props.tipa}
         > hide me</button>
         </div>
