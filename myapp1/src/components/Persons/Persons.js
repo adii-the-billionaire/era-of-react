@@ -1,19 +1,17 @@
 import React,{Component} from 'react'
 import Person from './Person/person'
 class Persons extends Component{
-   static getDerivedStateFromProps( props, state ) {
-      console.log('[Perosns.js] getDerivedStateFromProps')
-      return state
-   }
    shouldComponentUpdate( nextProps, nextState ) {
       console.log('[Person.js] shouldComponentUpdate')
       return true
    }
    getSnapshotBeforeUpdate(prevProps,prevState) {
-      console.log('[Person.js] getSnapShotBeforeUpdate')
+      console.log( '[Person.js] getSnapShotBeforeUpdate' )
+      return {message:'snaphot'}
    }
-   componentDidUpdate() {
-      console.log('[Perosns.js] componentDidUpdate')
+   componentDidUpdate(prevProps,prevState,snapshot) {
+      console.log( '[Perosns.js] componentDidUpdate' )
+      console.log(snapshot)
    }
    render() {
       console.log('[Person.js] rendering ...')

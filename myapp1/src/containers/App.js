@@ -26,10 +26,6 @@ class App extends Component {
     return state
   }
   
-  // componentWillMount() {
-  //   console.log('[App.js] component did mount')
-  // }coz only older version of react is supporter
-
   componentDidMount() {
     console.log('[App.js] component did mount')
   }
