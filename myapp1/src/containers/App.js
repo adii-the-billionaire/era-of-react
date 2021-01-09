@@ -10,10 +10,11 @@ class App extends Component {
   constructor ( props ) {
     super( props )
     console.log(
-      'app.js constructor'
+      '[App.js] constructor'
     )
-    this.state = {
-       person: [
+  }
+  state = {
+    person: [
       { id:'djdjdj', name: 'Mia', age: 90 },
       {
         id:'dkdkdk', name: 'Shasha', age: 90
@@ -22,19 +23,21 @@ class App extends Component {
     ],
     otherState: '',
     showPersons: false
-    }
   }
-  // state = {
-  //   person: [
-  //     { id:'djdjdj', name: 'Mia', age: 90 },
-  //     {
-  //       id:'dkdkdk', name: 'Shasha', age: 90
-  //     },
-  //     {id:'djdjdjd', name: 'Grey', age: 90 }
-  //   ],
-  //   otherState: '',
-  //   showPersons: false
-  // }
+
+  static getDerivedStateFromProps( props,state ) {
+    console.log( '[App.js] getDerivedStateFromProps', props )
+    return state
+  }
+  
+  componentWillMount() {
+    console.log('[App.js] component did mount')
+  }
+
+  componentDidMount() {
+    console.log('[App.js] component did mount')
+  }
+
   switchHandler = ( event ) => {
     this.setState( {
       person: [
@@ -69,6 +72,7 @@ class App extends Component {
   }
  
   render() {
+    console.log('[App.js] render')
     let person = null
     if ( this.state.showPersons ) {
       person = (
