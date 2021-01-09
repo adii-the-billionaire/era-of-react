@@ -25,9 +25,18 @@ class App extends Component {
     console.log( '[App.js] getDerivedStateFromProps', props )
     return state
   }
-  
+
   componentDidMount() {
     console.log('[App.js] component did mount')
+  }
+
+  shouldComponentUpdate() {
+    console.log( '[App.js] shouldComponentUpDate' )
+    return true
+  }
+
+  componentDidUpdate() {
+    console.log('[App.js]  componentDidUpdate')
   }
 
   switchHandler = ( event ) => {
