@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import classes from './App.module.css';
 import Cockpit from '../components/Cockpit/Cockpit'
-// import styled from 'styled-components'
-// import Radium, { StyleRoot}from 'radium'
-import Person from '../components/Persons/Person/person';
 import Persons from '../components/Persons/Persons'
-      
 class App extends Component {
   constructor ( props ) {
     super( props )
