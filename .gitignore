@@ -12,3 +12,6 @@
 /myapp/package.json
 /myapp/README.md
 /myapp1/config
+/vanilla/node_modules
+/vanilla/package-lock.json
+/vanilla/package.json
