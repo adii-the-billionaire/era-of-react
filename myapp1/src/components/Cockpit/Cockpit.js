@@ -3,13 +3,13 @@ import classes from './Cockpit.module.css'
 const Cockpit = ( props ) => {
   useEffect( () => {
     console.log( '[Cockpit.js] useEffect' )
-    const timer = setTimeout( () => {
+    setTimeout( () => {
       alert('saved data to cloud')
     }, 1000 )
     return () => {
-      clearTimeout(timer)
+     // clearTimeout(timer)
       console.log('[Cockpit.js] cleanup work in useEffect')
-    }
+    }//this shows component wil unmount and mount
   }, [] )
   useEffect( () => {
     console.log( '[Cockpit.js] 2nd useEffect' )
