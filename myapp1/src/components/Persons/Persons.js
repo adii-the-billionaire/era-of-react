@@ -1,14 +1,14 @@
-import React,{Component} from 'react'
+import React,{PureComponent} from 'react'
 import Person from './Person/person'
-class Persons extends Component{
-   shouldComponentUpdate( nextProps, nextState ) {
-      console.log( '[Person.js] shouldComponentUpdate' )
-      if ( nextProps.persons !== this.props.persons || nextProps.changed !== this.props.changed || nextProps.clicked !== this.props.clicked) {
-         return true
-      } else {
-         return false
-      }
-   }
+class Persons extends PureComponent{
+   // shouldComponentUpdate( nextProps, nextState ) {
+   //    console.log( '[Person.js] shouldComponentUpdate' )
+   //    if ( nextProps.persons !== this.props.persons || nextProps.changed !== this.props.changed || nextProps.clicked !== this.props.clicked) {
+   //       return true
+   //    } else {
+   //       return false
+   //    }
+   // }
    getSnapshotBeforeUpdate(prevProps,prevState) {
       console.log( '[Person.js] getSnapShotBeforeUpdate' )
       return {message:'snaphot'}
