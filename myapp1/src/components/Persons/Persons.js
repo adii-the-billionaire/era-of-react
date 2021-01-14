@@ -2,8 +2,12 @@ import React,{Component} from 'react'
 import Person from './Person/person'
 class Persons extends Component{
    shouldComponentUpdate( nextProps, nextState ) {
-      console.log('[Person.js] shouldComponentUpdate')
-      return true
+      console.log( '[Person.js] shouldComponentUpdate' )
+      if ( nextProps.persons !== this.props.persons ) {
+         return true
+      } else {
+         return false
+      }
    }
    getSnapshotBeforeUpdate(prevProps,prevState) {
       console.log( '[Person.js] getSnapShotBeforeUpdate' )

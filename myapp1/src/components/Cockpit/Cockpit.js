@@ -9,7 +9,7 @@ const Cockpit = ( props ) => {
     return () => {
      // clearTimeout(timer)
       console.log('[Cockpit.js] cleanup work in useEffect')
-    }//this shows component wil unmount and mount
+    }//this shows component wil unmount and unmounnt
   }, [] )
   useEffect( () => {
     console.log( '[Cockpit.js] 2nd useEffect' )
