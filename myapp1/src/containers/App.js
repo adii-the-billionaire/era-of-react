@@ -91,7 +91,7 @@ class App extends Component {
           this.setState({shotCockpit:false})
         }}>Remove Cockpit</butotn>
         {this.state.shotCockpit ? (
-          <Cockpit showPersons={this.state.showPersons} persons={this.state.person} tipa={this.togglePersonHandler} title={ this.props.title}/>
+          <Cockpit showPersons={this.state.showPersons} personsLength={this.state.person.length} tipa={this.togglePersonHandler} title={ this.props.title}/>
         ):null}
         
         {person}
