@@ -34,7 +34,8 @@ const Cockpit = ( props ) => {
       <h1>{props.title }</h1>
         <p className =  {assignedClassed.join(' ')}>this is really working</p>
         <button ref={toggleBtnRef } className={btnClass} onClick = {props.tipa}
-        > hide me</button>
+      > hide me</button>
+      <button onClick = {props.login}>Log in</button>
         </div>
     )
 }

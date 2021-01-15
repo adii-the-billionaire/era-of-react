@@ -14,7 +14,8 @@ class Person extends Component{
     render() {
         console.log('[Person.js] rendering ....')
         return (
-        <Auxilliary>
+            <Auxilliary>
+                {this.props.isAuth?<p>Authenticated</p>:<p>please login</p>}
         <p key="i1" onClick={this.props.click} >I'm {this.props.name} and I am {this.props.age} year old</p>
             <p key="i2" >{this.props.children}</p>
                 <input key="i3"
