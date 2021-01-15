@@ -1,14 +1,16 @@
-import React, { useEffect} from 'react'
+import React, { useEffect,useRef} from 'react'
 import classes from './Cockpit.module.css'
 const Cockpit = ( props ) => {
+  const toggleBtnRef = useRef(null)
   useEffect( () => {
     console.log( '[Cockpit.js] useEffect' )
     setTimeout( () => {
       alert('saved data to cloud')
     }, 1000 )
+    toggleBtnRef.current.click()
     return () => {
      // clearTimeout(timer)
-      console.log('[Cockpit.js] cleanup work in useEffect')
+      console.log( '[Cockpit.js] cleanup work in useEffect' )
     }//this shows component wil unmount and unmounnt
   }, [] )
   useEffect( () => {
@@ -31,7 +33,7 @@ const Cockpit = ( props ) => {
     return (<div className = {classes.Cockpit}>
       <h1>{props.title }</h1>
         <p className =  {assignedClassed.join(' ')}>this is really working</p>
-        <button className={btnClass} onClick = {props.tipa}
+        <button ref={toggleBtnRef } className={btnClass} onClick = {props.tipa}
         > hide me</button>
         </div>
     )
