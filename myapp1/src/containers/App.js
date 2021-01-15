@@ -21,7 +21,8 @@ class App extends Component {
     ],
     otherState: '',
     showPersons: false,
-    shotCockpit:true
+    shotCockpit: true,
+    changeCounter:0
   }
 
   static getDerivedStateFromProps( props,state ) {
@@ -60,8 +61,10 @@ class App extends Component {
     personNew.name = event.target.value
     const person2 = [ ...this.state.person ]
     person2[personIndex] = personNew
-    this.setState( {
-      person: person2
+    this.setState( (prevState,props)=> {
+    return {  person: person2,
+        changeCounter: this.state.changeCounter + 1
+       } 
     })
   }
   togglePersonHandler = () => {
