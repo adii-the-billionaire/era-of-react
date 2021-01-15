@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import classes from './App.module.css';
 import Cockpit from '../components/Cockpit/Cockpit'
 import Persons from '../components/Persons/Persons'
-import WithClass from '../hoc/WithClass'
+import withClass from '../hoc/WithClass'
+import Auxilliary from '../hoc/Auxilliary'
 class App extends Component {
   constructor ( props ) {
     super( props )
@@ -87,7 +88,7 @@ class App extends Component {
       )
     }
     return (
-      <WithClass classes={classes.App}>
+      <Auxilliary>
         <button onClick={() => {
           this.setState({shotCockpit:false})
         }}>Remove Cockpit</button>
@@ -96,9 +97,9 @@ class App extends Component {
         ):null}
         
         {person}
-        </WithClass>
+        </Auxilliary>
     )
   }
 }
-export default App ;
+export default withClass(App,classes.App) ;
 //export default Radium(App)
