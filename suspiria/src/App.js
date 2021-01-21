@@ -7,6 +7,8 @@ import List from './list1'
 import Sia from './CLASS'
 import Index from './index1'
 import Apppp from './App1'
+import Rnd from './rnd'
+import Butt from './buton'
 class App extends Component {
   state = {  }
   render() { 
@@ -18,8 +20,11 @@ class App extends Component {
         <List />
         <Sia />
         <Index />
-        <Apppp/>
+        <Apppp />
+        <Rnd />
+        <Butt/>
       </div>
+      
      )
   }
 }

@@ -1,9 +1,15 @@
-import React, { Component } from 'react';
-class Tip extends Component {
-    state = {  }
-    render() { 
-        return (  );
-    }
-}
+import React from 'react';
+ function Tip(props){
+     return (
+         <div>
+             {
+                 props.isLoading?<h1>Loading....</h1>:<h1>Some cool stuff about conditional rendering</h1>
+             }
+         </div>
+         
+     )
+   }
+    
+
  
 export default Tip;
