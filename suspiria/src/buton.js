@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 class Button extends Component {
-    constructor () {
-        super()
+    constructor (props) {
+        super(props)
         this.state = {
             isLoggedIn:false
         }
@@ -15,11 +15,11 @@ class Button extends Component {
         })
     }
     render() { 
-        const buttonText = this.state.isLoggedIn ? 'Log Out' : 'Log In'
-        const displayText = this.state.isLoggedIn?'Loggin':'Logged Out'
+        let buttonText = this.state.isLoggedIn ? 'Log Out' : 'Log In'
+        let displayText = this.state.isLoggedIn?'Loggin':'Logged Out'
         return (  
             <div>
-                <button>{buttonText}
+                <button onClick={this.handlerClick}>{buttonText}
                 </button>
                 <h1>
                     {displayText }</h1>

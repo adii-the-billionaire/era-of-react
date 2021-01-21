@@ -9,6 +9,7 @@ import Index from './index1'
 import Apppp from './App1'
 import Rnd from './rnd'
 import Butt from './buton'
+import Api from './api'
 class App extends Component {
   state = {  }
   render() { 
@@ -22,7 +23,8 @@ class App extends Component {
         <Index />
         <Apppp />
         <Rnd />
-        <Butt/>
+        <Butt />
+        <Api/>
       </div>
       
      )
