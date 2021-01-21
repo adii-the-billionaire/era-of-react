@@ -10,6 +10,7 @@ import Apppp from './App1'
 import Rnd from './rnd'
 import Butt from './buton'
 import Api from './api'
+import Form from './Form'
 class App extends Component {
   state = {  }
   render() { 
@@ -24,7 +25,8 @@ class App extends Component {
         <Apppp />
         <Rnd />
         <Butt />
-        <Api/>
+        <Api />
+        <Form/>
       </div>
       
      )
