@@ -10,8 +10,8 @@ class Form extends Component {
         this.handleChange = this.handleChange.bind(this)
     }
     handleChange(event) {
-        const { name, value } = event.target
-        this.setState( {
+        const { name, value,type,checked } = event.target
+        type==="checkbox"?this.setState({[name]:checked}):this.setState( {
             [name]:value
         })
     }
@@ -27,7 +27,10 @@ class Form extends Component {
                 </input>
                 <h1>{this.state.firstName} {this.state.lastName}</h1>
                 <textarea value="some default value"></textarea>
-                <input type='checkbox' checked={this.state.isReading}></input>
+                <br />
+                <label>
+                    <input type='checkbox' name="isReading" onChange={this.handleChange} checked={this.state.isReading}></input>
+                    </label>
             </form>
          );
     }
