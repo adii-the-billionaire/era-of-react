@@ -5,7 +5,9 @@ class Form extends Component {
         this.state = {
             firstName: '',
             lastName: '',
-            isReading:true
+            isReading: true,
+            gender:""
+            
         }
         this.handleChange = this.handleChange.bind(this)
     }
@@ -25,15 +27,37 @@ class Form extends Component {
                 <input type="text" placeholder=";lastName" onChange={this.handleChange} value={this.lastName}
                 name="lastName">
                 </input>
-                <h1>{this.state.firstName} {this.state.lastName}</h1>
-                <textarea value="some default value"></textarea>
+                <textarea value="some default value" onChange={this.handleChange}></textarea>
                 <br />
                 <label>
                     <input type='checkbox' name="isReading" onChange={this.handleChange} checked={this.state.isReading}></input>
-                    </label>
+                </label>
+                <br/>
+                 <label>
+                    <input type='radio' value="male" name="gender" onChange={this.handleChange} checked={this.state.gender === "male"}></input>
+                    Male
+                </label>
+                <br/>
+                 <label>
+                    <input type='radio' value="female" name="gender" onChange={this.handleChange} checked={this.state.gender === "female"}></input>
+                    Female
+                </label>
+                <select>
+                    <opiton>
+                    </opiton>
+                    <opiton>
+                    </opiton>
+                    <opiton>
+                    </opiton>
+                    <opiton>
+                    </opiton>
+                </select>
+                <h1>{this.state.firstName} {this.state.lastName}</h1>
+                <h2>you are a {this.state.gender }</h2>
             </form>
          );
     }
 }
  
 export default Form;
+//formik library 
