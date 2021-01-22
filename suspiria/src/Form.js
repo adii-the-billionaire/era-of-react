@@ -58,6 +58,8 @@ class Form extends Component {
                 <h1>{this.state.firstName} {this.state.lastName}</h1>
                 <h2>you are a {this.state.gender}</h2>
                 <h1>your favorite color is {this.state.favColor}</h1>
+                <button>Submit</button>
+                
             </form>
          );
     }
@@ -65,3 +67,4 @@ class Form extends Component {
  
 export default Form;
 //formik library 
+//checkbox don't have value attribute

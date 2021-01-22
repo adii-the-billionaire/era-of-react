@@ -11,6 +11,7 @@ import Rnd from './rnd'
 import Butt from './buton'
 import Api from './api'
 import Form from './Form'
+import Fro from './form1'
 class App extends Component {
   state = {  }
   render() { 
@@ -26,7 +27,8 @@ class App extends Component {
         <Rnd />
         <Butt />
         <Api />
-        <Form/>
+        <Form />
+        <Fro/>
       </div>
       
      )
