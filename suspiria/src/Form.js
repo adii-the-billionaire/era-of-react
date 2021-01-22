@@ -6,7 +6,8 @@ class Form extends Component {
             firstName: '',
             lastName: '',
             isReading: true,
-            gender:""
+            gender: "",
+            favColor:"blue"
             
         }
         this.handleChange = this.handleChange.bind(this)
@@ -42,18 +43,21 @@ class Form extends Component {
                     <input type='radio' value="female" name="gender" onChange={this.handleChange} checked={this.state.gender === "female"}></input>
                     Female
                 </label>
-                <select>
-                    <opiton>
-                    </opiton>
-                    <opiton>
-                    </opiton>
-                    <opiton>
-                    </opiton>
-                    <opiton>
-                    </opiton>
+                <br />
+                <label>Fovorite Color:</label>
+                <select value={this.state.favColor} onChange={this.handleChange} name="favColor">
+                    <option value="blue">Blue
+                    </option>
+                    <option value="green">Green
+                    </option>
+                    <option value="yellow">Yellow
+                    </option>
+                    <option value="orange">Orange
+                    </option>
                 </select>
                 <h1>{this.state.firstName} {this.state.lastName}</h1>
-                <h2>you are a {this.state.gender }</h2>
+                <h2>you are a {this.state.gender}</h2>
+                <h1>your favorite color is {this.state.favColor}</h1>
             </form>
          );
     }
