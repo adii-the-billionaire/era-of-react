@@ -29,7 +29,7 @@ class Meme extends Component {
     }
     render() { 
         return (  
-            <div>
+             <div>
                 <form onSubmit={this.handleSubmit}>
                     <input type="text"
                         name="topText" placeholder="Top Text"
