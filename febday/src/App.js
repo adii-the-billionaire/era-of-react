@@ -17,23 +17,40 @@ class App extends Component {
       name: 'Adiii',
       class: 25,
       age: '21'
-    }]
-   }
+      } ],
+    toggle:false
+  }
+  switchNameHandler = (name) => {
+    this.setState( {
+      person: [
+        {
+      name: name,
+      class: 23,
+      age: '21'
+    },
+    {
+      name: name,
+      class: 24,
+      age: '21'
+      },
+    {
+      name: name,
+      class: 25,
+      age: '21'
+    }
+      ],
+      toggle:true
+    })
+  }
   render() { 
-    let person = []
-      this.state.person.forEach( ( e ) => {
-        let tip = `my name is ${ e.name } my age is ${ e.age } nd my class is ${ e.class }`
-        person.push(tip)
-      } )
-    
     return ( 
       <div className="App">
-        <h1>
-          hi 
-        </h1>
-        <Person />
-        {}
-      </div>
+        <h1>Hi, i'm a React App</h1>
+        <button onClick={()=>{this.switchNameHandler('riya')} }>click</button>
+        <Person name={this.state.person[ 0 ].name} click = {this.switchNameHandler.bind(this,'miak')}  />
+        <Person name={this.state.person[1].name }  />
+        <Person name = {this.state.person[2].name}  />
+      </div> 
      );
   }
 }

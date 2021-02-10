@@ -1,12 +1,10 @@
 import React from 'react';
 import './App.css'
-function mia(props) {
+const person = (props)=> {
     return (
         <div>
-            <h3>
-                {props.name}
-            </h3>
+            <p onClick={props.click}> i an {props.name } </p>
         </div>
     )
 }
-export default mia
+export default person
