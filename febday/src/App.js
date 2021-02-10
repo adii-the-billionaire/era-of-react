@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css'
+import Person from './Person.js'
 class App extends Component {
   state = {  }
   render() { 
@@ -8,6 +9,7 @@ class App extends Component {
         <h1>
           hi 
         </h1>
+        <Person/>
       </div>
      );
   }
