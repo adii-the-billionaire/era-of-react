@@ -5,22 +5,20 @@ import Person from './Person/Person';
 class App extends Component {
   state = {
     persons: [
-      { name: 'Max', age: 28 },
-      { name: 'Manu', age: 29 },
-      { name: 'Stephanie', age: 26 }
+      { name: 'tia', age: 28 },
+      { name: 'nu', age: 29 },
+      { name: 'Se', age: 26 }
     ],
     otherState: 'some other value',
     showPersons: false
   }
 
   switchNameHandler = ( newName ) => {
-    // console.log('Was clicked!');
-    // DON'T DO THIS: this.state.persons[0].name = 'Maximilian';
     this.setState( {
       persons: [
         { name: newName, age: 28 },
-        { name: 'Manu', age: 29 },
-        { name: 'Stephanie', age: 27 }
+        { name: 'Mau', age: 29 },
+        { name: 'nie', age: 27 }
       ]
     } )
   }
@@ -28,9 +26,9 @@ class App extends Component {
   nameChangedHandler = ( event ) => {
     this.setState( {
       persons: [
-        { name: 'Max', age: 28 },
+        { name: 'Ma', age: 28 },
         { name: event.target.value, age: 29 },
-        { name: 'Stephanie', age: 26 }
+        { name: 'e', age: 26 }
       ]
     } )
   }
@@ -40,7 +38,7 @@ class App extends Component {
     this.setState( { showPersons: !doesShow } );
   }
 
-  render () {
+  render() {
     const style = {
       backgroundColor: 'white',
       font: 'inherit',
@@ -50,23 +48,14 @@ class App extends Component {
     };
 
     let persons = null;
-
-    if ( this.state.showPersons ) {
+    if(this.state.showPersons){
       persons = (
         <div>
-          <Person
-            name={this.state.persons[0].name}
-            age={this.state.persons[0].age} />
-          <Person
-            name={this.state.persons[1].name}
-            age={this.state.persons[1].age}
-            click={this.switchNameHandler.bind( this, 'Max!' )}
-            changed={this.nameChangedHandler} >My Hobbies: Racing</Person>
-          <Person
-            name={this.state.persons[2].name}
-            age={this.state.persons[2].age} />
+          {this.state.persons.map( ( data ) => {
+            return <Person name={data.name} age={data.age }/>
+          })}
         </div>
-      );
+        )
     }
 
     return (
@@ -78,9 +67,9 @@ class App extends Component {
           onClick={this.togglePersonsHandler}>Toggle Persons</button>
         {persons}
       </div>
-    );
-    // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
+    )
   }
 }
 
 export default App;
+
