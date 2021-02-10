@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css'
-function mia() {
+function mia(props) {
     return (
         <div>
-            <h1>hi const </h1>
+            <h3>
+                {props.name}
+            </h3>
         </div>
     )
 }
