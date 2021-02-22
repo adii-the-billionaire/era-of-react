@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import classes from './BurgerIngredient.module.css'
-import PropType from 'prop-types'
+import PropTypes from 'prop-types'
 class BugerIngredient extends Component {
     render() {
         let ingredient = null
@@ -35,6 +35,9 @@ class BugerIngredient extends Component {
     }
 }
 
+BugerIngredient.propTypes = {
+    type:PropTypes.string.isRequired
+}
 
 export default BugerIngredient
 //how to adding proptypes enabling
