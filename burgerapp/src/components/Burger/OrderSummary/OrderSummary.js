@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import Aux from '../../../hoc/Auxiliary'
-import Button from '../../UI/Button/Button'
+import Button from '../../UI/MODAL/Button/Button'
 class OrderSummary extends Component {
     render() {
          const ingredientSummary = Object.keys( this.props.ingredients ).map( ( el ) => {
