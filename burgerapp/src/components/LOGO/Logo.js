@@ -1,9 +1,9 @@
 import React from 'react';
 import burgerLogo from '../../assets/images/burger-logo.png'
 import classes from './Logo.module.css'
-const logo = ( props ) => {
+const logo = ( props ) => {//style={{height:props.height}}
     return (
-        <div className ={classes.Logo} style={{height:props.height}}>
+        <div className ={classes.Logo} >
            <img src={burgerLogo} alt="MyBurger"/>
         </div>
    )
