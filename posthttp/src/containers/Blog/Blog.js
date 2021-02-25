@@ -7,7 +7,8 @@ import classes from './Blog.module.css';
 
 class Blog extends Component {
     state = {
-        posts:[]
+        posts: [],
+        selectedPost_id:null
     }
     componentDidMount() {
         axios.get( 'https://jsonplaceholder.typicode.com/posts' ).then( response => {
@@ -21,9 +22,15 @@ class Blog extends Component {
             this.setState({posts:tip})
         } )
     }
+
+     idStateChangeHandler = (id) => {
+    this.setState({selectedPost_id:id})
+}
+
     render() {
         const posts = this.state.posts.map( post => {
-            return <Post title={post.title} key={post.id} author={ post.author}/>   
+            return <Post title={post.title} key={post.id} author={post.author}
+                clicked={() =>  this.idStateChangeHandler( post.id ) }/>   
         })
         return (
             <div>
@@ -31,7 +38,7 @@ class Blog extends Component {
                     {posts}
                 </section>
                 <section>
-                    <FullPost />
+                    <FullPost id={this.state.selectedPost_id} />
                 </section>
                 <section>
                     <NewPost />
