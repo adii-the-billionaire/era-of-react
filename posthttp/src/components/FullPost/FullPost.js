@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
-
+import axios from 'axios'
 import classes from'./FullPost.module.css';
 
 class FullPost extends Component {
+    state = {
+        postData :null
+    }
+ 
+    componentDidUpdate() {
+        if ( this.props.id ) {
+            if ( !this.state.postData || ( this.state.postData && this.state.postData.id !== this.props.id ) ) {
+                axios.get( 'https://jsonplaceholder.typicode.com/posts/' + this.props.id ).then( response => {
+                    this.setState({postData:response.data})
+                })
+            }
+        }
+    }
+
     render () {
         let post = <p>Please select a Post!</p>;
         if ( this.props.id ) {
-            post = (
+           post = <p>Loading.....</p>
+        }
+        if ( this.state.postData ) {
+             post = (
             <div className={classes.FullPost}>
-                <h1>Title</h1>
-                <p>Content</p>
+                    <h1>{this.state.postData.title }</h1>
+                    <p>{ this.state.postData.body}</p>
                 <div className={classes.Edit}>
                     <button className={classes.Delete}>Delete</button>
                 </div>
