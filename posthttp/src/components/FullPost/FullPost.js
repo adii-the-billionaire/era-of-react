@@ -4,15 +4,15 @@ import classes from'./FullPost.module.css';
 
 class FullPost extends Component {
     state = {
-        postData :null
+        postData: null,
     }
  
     componentDidUpdate() {
         if ( this.props.id ) {
             if ( !this.state.postData || ( this.state.postData && this.state.postData.id !== this.props.id ) ) {
-                axios.get( 'https://jsonplaceholder.typicode.com/posts/' + this.props.id ).then( response => {
+                axios.get( 'https://jsonplaceholder.typicode.com/postss/' + this.props.id ).then( response => {
                     this.setState({postData:response.data})
-                })
+                } )
             }
         }
     }
@@ -20,13 +20,14 @@ class FullPost extends Component {
     deletePostHadler = () => {
         axios.delete( 'https://jsonplaceholder.typicode.com/posts/' + this.props.id ).then( response => {
            console.log(response)
-       })
+        } )
 }
     
 
 
     render () {
         let post = <p>Please select a Post!</p>;
+        
         if ( this.props.id ) {
            post = <p>Loading.....</p>
         }
