@@ -54,6 +54,6 @@ class Blog extends Component {
             </div>
         );
     }
-}
+} 
 
 export default Blog;
