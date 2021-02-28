@@ -19,12 +19,15 @@ class BurgerBuilder extends Component {
         totalPrice: 4,
         purchasable: false,
         purchasing: false,
-        loading:false
+        loading: false,
+        error:null
     }
 
     componentDidMount() {
-        axios.get( 'https://desi-burger-e2c90-default-rtdb.firebaseio.com/ingredients.json' ).then( response => {
-        this.setState({ingredients:response.data})
+        axios.get( 'https://desi-burger-e2c90-default-rtdb.firebaseio.com/.json' ).then( response => {
+            this.setState( { ingredients: response.data } )
+        } ).catch( e => {
+        this.setState({error:true})
     })
 }
 
@@ -107,7 +110,7 @@ class BurgerBuilder extends Component {
             disabledInfo[key]= disabledInfo[key]<=0
         }
         let orderSummary = null
-        let burger = <Spinner/>
+        let burger = this.state.error ? <h1 style={{ textAlign: "center"}}>Ingredients can't be load</h1>: <Spinner/>
         if ( this.state.ingredients ) {
             burger = (
                <Aux>
@@ -140,4 +143,5 @@ class BurgerBuilder extends Component {
     }
 }
  
-export default withErrorHandler(BurgerBuilder,axios)
+export default withErrorHandler( BurgerBuilder, axios )
+//how to handle error during fetching data from the server
