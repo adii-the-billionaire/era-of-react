@@ -8,14 +8,20 @@ const withErrorHandler = ( WrappedComponent,axios ) => {
         }
         constructor ( props ) {
             super(props)
-            axios.interceptors.request.use( req => {
+           this.reqInterceptor = axios.interceptors.request.use( req => {
                 this.setState( { error: null } )
                 return req
             })
-            axios.interceptors.response.use( res=>res,error => {
+            this.resInterceptor =axios.interceptors.response.use( res=>res,error => {
                 this.setState({error:error})
             })
         }
+//preventing memory leaks
+        componentWillUnmount() {
+
+            axios.interceptors.request.eject( this.reqInterceptor )
+            axios.interceptors.response.eject(this.resInterceptor)
+}
 
         errorConfirmHandler = () => {
             this.setState({error:null})
@@ -35,3 +41,5 @@ const withErrorHandler = ( WrappedComponent,axios ) => {
 }
 export default withErrorHandler
 //error before the child components wil rendered that's the logic
+//overcome the problems of multiple attachment of mounting child components unneccesary with hoc
+//eject is the method of remove unneccessary interceptors in the higher order component
