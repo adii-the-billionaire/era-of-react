@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom'
+import {Route,Link} from 'react-router-dom'
 import Posts from './Posts/Posts'
 import classes from './Blog.module.css';
 import NewPost from './NewPost/NewPost'
@@ -10,9 +10,13 @@ import NewPost from './NewPost/NewPost'
                 <header>
                     <nav>
                         <ul className={classes.ul}>
-                            <li className={classes.li}><a href="/" >Home</a></li>
-                            <li className={classes.li}><a href="/new-post" className={classes.a}>NewPost</a></li>
-                            <li className={classes.li}><a href="/m" className={classes.a}>Posts</a></li>
+                            <li className={classes.li}><Link to="/" >Home</Link></li>
+                            <li className={classes.li}><Link to={{
+                                pathname: '/m',
+                                hash: '#submit',
+                                search:'?quick-submit=true'
+                            }} className={classes.a}>Posts</Link></li>
+                            <li className={classes.li}><Link to="/new-post" className={classes.a}>NewPost</Link></li>
                         </ul>
                     </nav>
                 </header>
@@ -25,3 +29,4 @@ import NewPost from './NewPost/NewPost'
 }
 
 export default Blog;
+//a link jb bhi click ho rha tb bar bar hmesha data re rendered ho rha jo ki jaruri nhi for performance so let's overcome this solution 
