@@ -109,7 +109,8 @@ class BurgerBuilder extends Component {
         let orderSummary = null
         let burger = <Spinner/>
         if ( this.state.ingredients ) {
-           burger = <Aux>
+            burger = (
+               <Aux>
                 <Burger ingredients={this.state.ingredients} />
                 <BuildControls
                     ingredientAdded={this.addIngredientHandler}
@@ -119,10 +120,11 @@ class BurgerBuilder extends Component {
                     purchasable={this.state.purchasable}
                     ordered={this.purchaseHandler} />
             </Aux>
+            ) 
+            orderSummary =<OrderSummary ingredients={this.state.ingredients}
+            purchaseCancelled={this.purchaseCancelHandler} purchaseContinued={this.purchaseContinueHandler} /> 
         }
  
-        orderSummary =<OrderSummary ingredients={this.state.ingredients}
-            purchaseCancelled={this.purchaseCancelHandler} purchaseContinued={this.purchaseContinueHandler} /> 
         if ( this.state.loading ) {
               orderSummary = <Spinner/>
         } 
