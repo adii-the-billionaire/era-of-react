@@ -4,12 +4,13 @@ import Post from '../../../components/Post/Post'
 import classes from './Posts.module.css'
 class Posts extends Component {
     state = { 
-        posts: []
+        posts: [],
     }
     idStateChangeHandler = ( id ) => {
         this.setState( { selectedPost_id: id } )
     }
-     componentDidMount() {
+    componentDidMount() {
+         console.log(this.props)
         axios.get( '/posts' ).then( response => {
             const posts = response.data.slice( 0, 4 )
             const tip = posts.map( ( post ) => {
