@@ -29,8 +29,8 @@ class Posts extends Component {
         let posts = <p style={{textAlign:'center'}}>something went wrong</p>
         if ( !this.state.error ) {
             posts = this.state.posts.map( post => {
-            return <Post title={post.title} key={post.id} author={post.author}
-                clicked={() =>  this.idStateChangeHandler( post.id ) }/>   
+                return <Post title={post.title} key={post.id} author={post.author}
+                    clicked={() => this.idStateChangeHandler( post.id )} {... this.props}/>   
         }) 
         }
         return (  
