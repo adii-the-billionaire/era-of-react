@@ -18,7 +18,8 @@ class NewPost extends Component {
         }
         axios.post( '/posts',data ).then( response => {
             console.log( response )
-            this.setState({suvbmitted:true})
+            //this.setState({suvbmitted:true})
+            this.props.history.push('/posts')
         })
     }
 
@@ -50,3 +51,4 @@ class NewPost extends Component {
 }
 
 export default NewPost;
+//if something happened i want to rerendered the components then we can use redirect
