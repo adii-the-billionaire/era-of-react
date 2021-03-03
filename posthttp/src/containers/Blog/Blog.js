@@ -12,21 +12,19 @@ import FullPost from './FullPost/FullPost';
                 <header>
                     <nav>
                         <ul className={classes.ul}>
-                            <li className={classes.li}><NavLink to="/" exact>Home</NavLink></li>
-                            <li className={classes.li}><NavLink to={{
-                                pathname: '/m',
+                            <li className={classes.li}><NavLink to='/'
+                                className={classes.a}>Home</NavLink></li>
+                             <li className={classes.li}><NavLink to={{
+                                pathname: '/new-post',
                                 hash: '#submit',
                                 search:'?quick-submit=true'
-                            }} className={classes.a}>Posts</NavLink></li>
-                            <li className={classes.li}><NavLink to='/new-post'
-                             className={classes.a}>NewPost</NavLink></li>
+                            }} className={classes.a}>New Post</NavLink></li>
                         </ul>
                     </nav>
-                </header>
-                <Route path="/" exact render={() => <h1>Home</h1>} />
-                <Route path="/m" exact component={Posts} />
+                </header>   
+                <Route path="/" exact component={Posts} />
                 <Route path='/new-post' exact component={NewPost}></Route>
-                <Route path="/:id" exact component={ FullPost}/>
+                <Route path="/posts/:id" exact component={ FullPost}/>
             </div>
         ); 
     }
