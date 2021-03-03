@@ -3,7 +3,10 @@ import {Route,NavLink,Switch,Redirect} from 'react-router-dom'
 import Posts from './Posts/Posts'
 import classes from './Blog.module.css';
 import NewPost from './NewPost/NewPost'
- class Blog extends Component {
+class Blog extends Component {
+    state = {
+         auth:false
+     }
     render() {
         return (
             <div>
@@ -21,9 +24,10 @@ import NewPost from './NewPost/NewPost'
                     </nav>
                 </header>   
                 <Switch>
-                    <Route path='/new-post' exact component={NewPost}></Route>
+                    {this.state.auth?<Route path='/new-post' exact component={NewPost}></Route>:null}
                     <Route path="/posts" component={Posts} />
-                    <Redirect from = '/' to = '/posts'/>
+                    <Redirect from='/' to='/posts' />
+                    <Route render={()=><h1>Not working </h1> }/>
                 </Switch>
             </div>
         ); 
