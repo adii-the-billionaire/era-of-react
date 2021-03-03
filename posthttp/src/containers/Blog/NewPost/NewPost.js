@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import classes from './NewPost.module.css';
-
+import {Redirect} from 'react-router-dom'
 class NewPost extends Component {
     state = {
         title: '',
         content: '',
-        author: 'adii'
+        author: 'adii',
+        suvbmitted:false
     }
 
     postData = () => {
@@ -16,16 +17,22 @@ class NewPost extends Component {
             author:this.state.author
         }
         axios.post( '/posts',data ).then( response => {
-            console.log(response)
+            console.log( response )
+            this.setState({suvbmitted:true})
         })
     }
 
     componentDidMount() {
         console.log(this.props)
     }
-    render () {
+    render() {
+        let redirect = null
+        if ( this.state.suvbmitted ) {
+            redirect  = (<Redirect to = "/posts"/>)
+        }
         return (
             <div className={classes.NewPost}>
+                {redirect}
                 <h1>Add a Post</h1>
                 <label>Title</label>
                 <input type="text" value={this.state.title} onChange={(event) => this.setState({title: event.target.value})} />
