@@ -3,8 +3,6 @@ import {Route,NavLink,Switch} from 'react-router-dom'
 import Posts from './Posts/Posts'
 import classes from './Blog.module.css';
 import NewPost from './NewPost/NewPost'
-
-import FullPost from './FullPost/FullPost';
  class Blog extends Component {
     render() {
         return (
@@ -23,9 +21,8 @@ import FullPost from './FullPost/FullPost';
                     </nav>
                 </header>   
                 <Switch>
-                    <Route path="/posts" exact component={Posts} />
                     <Route path='/new-post' exact component={NewPost}></Route>
-                    <Route path="/posts/:id" exact component={ FullPost}/>
+                     <Route path="/posts"  component={Posts} />
                 </Switch>
             </div>
         ); 
