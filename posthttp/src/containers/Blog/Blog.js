@@ -12,8 +12,8 @@ import FullPost from './FullPost/FullPost';
                 <header>
                     <nav>
                         <ul className={classes.ul}>
-                            <li className={classes.li}><NavLink to='/'
-                                className={classes.a}>Home</NavLink></li>
+                            <li className={classes.li}><NavLink to='/posts' 
+                                className={classes.a} activeClassName="my-active" activeStyle={{color:'blueviolet',textDecoration:'underline'}}>Posts</NavLink></li>
                              <li className={classes.li}><NavLink to={{
                                 pathname: '/new-post',
                                 hash: '#submit',
@@ -23,7 +23,7 @@ import FullPost from './FullPost/FullPost';
                     </nav>
                 </header>   
                 <Switch>
-                    <Route path="/" exact component={Posts} />
+                    <Route path="/posts" exact component={Posts} />
                     <Route path='/new-post' exact component={NewPost}></Route>
                     <Route path="/posts/:id" exact component={ FullPost}/>
                 </Switch>

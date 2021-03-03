@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import axios from '../../../axios'
 import Post from '../../../components/Post/Post'
-import {Link} from 'react-router-dom'
+ import {Link} from 'react-router-dom'
 import classes from './Posts.module.css'
 class Posts extends Component {
     state = { 
         posts: [],
     }
     idStateChangeHandler = ( id ) => {
-        this.setState( { selectedPost_id: id } )
+        // this.setState( { selectedPost_id: id } )
+        this.props.history.push({pathname:'/'+id})
     }
     componentDidMount() {
          console.log(this.props.match)
