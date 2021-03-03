@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from '../../../axios'
 import Post from '../../../components/Post/Post'
+import {Link} from 'react-router-dom'
 import classes from './Posts.module.css'
 class Posts extends Component {
     state = { 
@@ -10,7 +11,7 @@ class Posts extends Component {
         this.setState( { selectedPost_id: id } )
     }
     componentDidMount() {
-         console.log(this.props)
+         console.log(this.props.match)
         axios.get( '/posts' ).then( response => {
             const posts = response.data.slice( 0, 4 )
             const tip = posts.map( ( post ) => {
@@ -29,8 +30,12 @@ class Posts extends Component {
         let posts = <p style={{textAlign:'center'}}>something went wrong</p>
         if ( !this.state.error ) {
             posts = this.state.posts.map( post => {
-                return <Post title={post.title} key={post.id} author={post.author}
-                    clicked={() => this.idStateChangeHandler( post.id )} {... this.props}/>   
+                return (
+                   <Link to ={'/'+post.id} key={post.id}>
+                      <Post title={post.title} key={post.id} author={post.author}
+                      clicked={() => this.idStateChangeHandler( post.id )} />
+                </Link>
+                )    
         }) 
         }
         return (  
@@ -42,3 +47,4 @@ class Posts extends Component {
 }
  
 export default Posts;
+//{... this.props}

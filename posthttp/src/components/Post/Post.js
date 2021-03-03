@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {withRouter} from 'react-router-dom'
 import classes from './Post.module.css';
 
 const post = ( props ) => {
@@ -11,4 +11,5 @@ const post = ( props ) => {
         </div>
     </article>)
     }
-export default post;
+export default withRouter( post );
+//getting same props that containing same information from Posts component

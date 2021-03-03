@@ -14,6 +14,10 @@
     color: aqua;
 }
 
+.a.active {
+    color: darkred;
+}
+
 .a:hover,
 .a:active {
     cursor: pointer;
