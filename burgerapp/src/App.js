@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Route,Switch} from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import classes from './App.module.css';
 import Checkout from './containers/Checkout/Checkout'
@@ -16,8 +17,10 @@ class App extends Component {
     return ( 
       <div>
         <Layout>
-          {this.state.show ? <BurgerBuilder /> : null}
-          <Checkout/>
+          <switch>
+            <Route path="/checkout" component={Checkout}></Route>
+          <Route path = "/" exact component={BurgerBuilder}/>
+          </switch>
         </Layout>
       </div>
     );
