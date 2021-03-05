@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Layout from './components/Layout/Layout'
 import classes from './App.module.css';
+import Checkout from './containers/Checkout/Checkout'
 import BurgerBuilder from './containers/BurgerBuilder/BurgerBuilder'
 class App extends Component {
   state = { 
@@ -8,14 +9,15 @@ class App extends Component {
   }
   componentDidMount() {
     setTimeout( () => {
-      this.setState({show:false})
+      this.setState({show:true})
     },5000)
   }
   render() { 
     return ( 
       <div>
         <Layout>
-          {this.state.show?<BurgerBuilder/>:null}
+          {this.state.show ? <BurgerBuilder /> : null}
+          <Checkout/>
         </Layout>
       </div>
     );

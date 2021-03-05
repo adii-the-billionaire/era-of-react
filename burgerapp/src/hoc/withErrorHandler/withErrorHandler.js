@@ -43,3 +43,4 @@ export default withErrorHandler
 //error before the child components wil rendered that's the logic
 //overcome the problems of multiple attachment of mounting child components unneccesary with hoc
 //eject is the method of remove unneccessary interceptors in the higher order component
+//react is just component creation library
