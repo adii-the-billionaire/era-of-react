@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom'
 import Aux from '../../hoc/Auxilliary/Auxilliary';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
@@ -92,34 +91,12 @@ class BurgerBuilder extends Component {
     }
 
     purchaseContinueHandler = () => {
-        // alert('You continue!');
-        // this.setState( { loading: true } );
-        // const order = {
-        //     ingredients: this.state.ingredients,
-        //     price: this.state.totalPrice,
-        //     customer: {
-        //         name: 'adii',
-        //         address: {
-        //             street: 'Teststreet 1',
-        //             zipCode: '229412',
-        //             country: 'india'
-        //         },
-        //         email: 'test@test.com'
-        //     },
-        //     deliveryMethod: 'fastest'
-        // }
-        // axios.post( '/orders.json', order )
-        //     .then( response => {
-        //         this.setState( { loading: false, purchasing: false } );
-        //     } )
-        //     .catch( error => {
-        //         this.setState( { loading: false, purchasing: false } );
-        //     } );
         const queryParams = []
         console.log(this.state.ingredients)
         for ( let i in this.state.ingredients ) {
             queryParams.push(encodeURIComponent(i)+"="+encodeURIComponent(this.state.ingredients[i]))
         }
+        queryParams.push('price='+this.state.totalPrice)
         console.log(queryParams)
         const queryString = queryParams.join('&')
         this.props.history.push( {
