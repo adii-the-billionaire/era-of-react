@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../../axios-orders'
 import React, { Component } from 'react'
 import Order from '../../components/Order/Order'
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler'
