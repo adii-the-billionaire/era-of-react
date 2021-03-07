@@ -1,10 +1,20 @@
 import React from 'react'
 import classes from './Order.module.css'
-const order = (props) => {
+const order = ( props ) => {
+    let ingredients = []
+     for ( let key in props.ingredients ) {
+         ingredients.push( {
+             name: key,
+             amount:props.ingredients[key]
+         })
+    }
+    const ingredientsOutput = ingredients.map( ig => {
+        return <span>{ig.name } ({ig.amount})</span>
+    })
     return (
         <div className={classes.Order}>
-            <p>Ingredients:</p>
-            <p>Price:<strong>5rupay</strong></p>
+            <p>{ ingredientsOutput}</p>
+            <p>Price:<strong>{props.price }</strong></p>
         </div>
     )
 }
