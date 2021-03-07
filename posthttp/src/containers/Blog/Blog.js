@@ -40,3 +40,5 @@ class Blog extends Component {
 
 export default Blog;
 //a link jb bhi click ho rha tb bar bar hmesha data re rendered ho rha jo ki jaruri nhi for performance so let's overcome this solution 
+//how to load your data asynchronously only when they are needed 
+//also known as lazy loading 
