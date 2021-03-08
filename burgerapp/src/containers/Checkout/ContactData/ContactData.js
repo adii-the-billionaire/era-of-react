@@ -4,7 +4,6 @@ import classes from './ContactData.module.css'
 import axios from '../../../axios-orders'
 import Spinner from '../../../components/UI/Spinner/Spinner'
 import Input from '../../../components/UI/INPUT/Input'
-import { element } from 'prop-types'
 class ContactData extends Component {
     state = {
         orderForm: {
@@ -56,7 +55,7 @@ class ContactData extends Component {
             deliveryMethod: {
                  elementType: 'select',
                  elementConfig: {
-                     option: [ {
+                     options: [ {
                          value: 'fastest', displayValue: 'Fastest'
                      },
                          {
