@@ -37,7 +37,7 @@ class ContactData extends Component {
                 elementType: 'input',
                 elementConfig: {
                     type: 'text',
-                    placeholder:'Your Name'
+                    placeholder:'Zip code'
                 },
                 value: '',
                 validation: {
@@ -120,15 +120,15 @@ class ContactData extends Component {
     }
     
      checkValidity( value, rules ) {
-        let isValid = false
+        let isValid = true
         if ( rules.required ) {
-            isValid = value.trim()!==''
+            isValid = value.trim()!==''&& isValid
          }
          if ( rules.minLength ) {
-             isValid = value.length>=rules.minLength
+             isValid = value.length>=rules.minLength&&isValid
          }
          if ( rules.maxLength ) {
-             isValid = value.length<=rules.maxLength
+             isValid = value.length<=rules.maxLength&&isValid
          }
         return isValid
     }
